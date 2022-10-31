@@ -1,0 +1,18 @@
+<svg width="350" height="350" xmlns="http://www.w3.org/2000/svg">
+ <title>Drawing</title>
+
+ <g id="Layer_1">
+  <title>Layer 1</title>
+  <g id="svg_14" stroke="null">
+   <rect fill="#000000" x="88.25771" y="71.49998" width="76.56965" height="217" id="svg_2" stroke="#000"/>
+   <rect fill="#000000" x="180.92902" y="71.52557" width="108.47441" height="216.94882" id="svg_3" stroke="#000"/>
+   <rect fill="#000000" x="239.86623" y="71.52557" width="108.47441" height="216.94882" id="svg_5" stroke="#000"/>
+   <rect fill="#ffffff" stroke-width="0" x="165.54726" y="172.75361" width="184.05805" height="14.49276" id="svg_6" stroke="#000"/>
+   <path fill="#000000" stroke-width="0" opacity="undefined" d="m89.80022,288.85192c-46.62994,0 -69.0525,-48.71274 -69.0525,-108.85193c0,-60.13919 17.64169,-108.85193 69.0525,-108.85193c51.41082,0 55.55557,48.71274 55.55557,108.85193c0,60.13919 -8.92563,108.85193 -55.55557,108.85193z" id="svg_7" stroke="#000"/>
+   <ellipse fill="#000000" stroke-width="0" cx="-25.51552" cy="179.99998" id="svg_8" rx="0.24155" stroke="#000"/>
+   <ellipse fill="#000000" stroke-width="0" cx="56.36855" cy="179.99997" id="svg_9" ry="0.24155" stroke="#000"/>
+   <rect fill="#ffffff" stroke-width="0" x="326.79873" y="59.9479" width="148.95834" height="240.10418" id="svg_11" stroke="#000"/>
+   <rect fill="#ffffff" stroke-width="0" x="99.50844" y="68.58538" width="14.62171" height="222.82924" id="svg_13" stroke="#000"/>
+  </g>
+ </g>
+</svg>
