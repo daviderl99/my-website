@@ -1,3 +1,4 @@
+import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -6,10 +7,58 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuIcon from '@mui/icons-material/Menu';
 import Logo from '../shared/images/logo.svg';
+import {
+  List,
+  ListItem,
+  ListItemText,
+  ListItemButton,
+  Divider,
+  IconButton,
+  Drawer
+} from '@mui/material/';
 
 const pages = ['CV', 'Blog', 'About'];
 
 function Header() {
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+
+  const drawer = (
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+      <Typography
+        variant="h6"
+        noWrap
+        component="a"
+        href="/"
+        sx={{
+          mr: 2,
+          flexGrow: 1,
+          display: { xs: 'flex'},
+          fontFamily: 'monospace',
+          fontWeight: 700,
+          letterSpacing: '.2rem',
+          color: 'inherit',
+          textDecoration: 'none',
+        }}
+      >
+        David Erlich
+      </Typography>
+      <Divider />
+      <List>
+        {pages.map((item) => (
+          <ListItem key={item} disablePadding>
+            <ListItemButton sx={{ textAlign: 'center' }}>
+              <ListItemText primary={item} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
+
   return (
     <AppBar position="sticky">
       <Container maxWidth="xl">
@@ -56,9 +105,29 @@ function Header() {
             ))}
           </Box>
           <Box sx={{display: {xs: 'flex', md: 'none'}}}>
-            <MenuIcon />
+            <IconButton
+              onClick={handleDrawerToggle}
+            >
+              <MenuIcon />
+            </IconButton>
           </Box>
         </Toolbar>
+        <Box component="nav">
+          <Drawer
+            variant="temporary"
+            open={mobileOpen}
+            onClose={handleDrawerToggle}
+            ModalProps={{
+              keepMounted: true,
+            }}
+            sx={{
+              display: { xs: 'block', sm: 'none' },
+              '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '100%' },
+            }}
+          >
+            {drawer}
+          </Drawer>
+        </Box>
       </Container>
     </AppBar>
   );
