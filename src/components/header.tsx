@@ -23,6 +23,8 @@ import ModeNightIcon from '@mui/icons-material/ModeNight';
 
 const pages = ['cv', 'blog', 'about'];
 
+// get more help here -> https://codesandbox.io/s/material-ui-drawer-example-forked-16zfsl?file=/index.js:548-553
+
 function Header() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -32,20 +34,21 @@ function Header() {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Link to="/">
-        <Box
-          component="img"
-          sx={{
-            height: 75,
-            width: 75,
-            maxHeight: { xs: 50, md: 100 },
-            maxWidth: { xs: 50, md: 100 },
-          }}
-          alt="Logo"
-          src={Logo}
-        />
-      </Link>
-      <Divider />
+      <Box sx={{bgcolor: 'primary.main'}}>
+        <Link to="/">
+          <Box
+            component="img"
+            sx={{
+              height: 75,
+              width: 75,
+              maxHeight: { xs: 50, md: 100 },
+              maxWidth: { xs: 50, md: 100 },
+            }}
+            alt="Logo"
+            src={Logo}
+          />
+        </Link>
+      </Box>
       <List>
         {pages.map((item) => (
           <ListItem key={item} disablePadding>
@@ -139,7 +142,7 @@ function Header() {
             }}
             sx={{
               display: { xs: 'block', sm: 'none' },
-              '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '100%' },
+              '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '50%' },
             }}
           >
             {drawer}
