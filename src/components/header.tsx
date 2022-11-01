@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuIcon from '@mui/icons-material/Menu';
-import Logo from '../shared/images/logo.svg';
+import Logo from '../shared/images/logo.png';
 import {
   List,
   ListItem,
@@ -14,10 +14,14 @@ import {
   ListItemButton,
   Divider,
   IconButton,
-  Drawer
+  Drawer,
+  Tooltip
 } from '@mui/material/';
+import { Link } from 'react-router-dom';
+import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined';
+import ModeNightIcon from '@mui/icons-material/ModeNight';
 
-const pages = ['CV', 'Blog', 'About'];
+const pages = ['cv', 'blog', 'about'];
 
 function Header() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -28,30 +32,25 @@ function Header() {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography
-        variant="h6"
-        noWrap
-        component="a"
-        href="/"
-        sx={{
-          mr: 2,
-          flexGrow: 1,
-          display: { xs: 'flex'},
-          fontFamily: 'monospace',
-          fontWeight: 700,
-          letterSpacing: '.2rem',
-          color: 'inherit',
-          textDecoration: 'none',
-        }}
-      >
-        David Erlich
-      </Typography>
+      <Link to="/">
+        <Box
+          component="img"
+          sx={{
+            height: 75,
+            width: 75,
+            maxHeight: { xs: 50, md: 100 },
+            maxWidth: { xs: 50, md: 100 },
+          }}
+          alt="Logo"
+          src={Logo}
+        />
+      </Link>
       <Divider />
       <List>
         {pages.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+              <ListItemText primary={item.toUpperCase()} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -63,30 +62,32 @@ function Header() {
     <AppBar position="sticky">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Box
-            component="img"
-            sx={{
-              mr: 2,
-              height: 75,
-              width: 75,
-              maxHeight: { xs: 100, md: 167 },
-              maxWidth: { xs: 100, md: 250 },
-            }}
-            alt="Logo"
-            src={Logo}
-          />
+          <Link to="/">
+            <Box
+              component="img"
+              sx={{
+                mr: 2,
+                height: 75,
+                width: 75,
+                maxHeight: { xs: 50, md: 100 },
+                maxWidth: { xs: 50, md: 100 },
+              }}
+              alt="Logo"
+              src={Logo}
+            />
+          </Link>
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="/"
+            component={Link}
+            to="/"
             sx={{
               mr: 2,
               flexGrow: 1,
               display: { xs: 'flex'},
               fontFamily: 'monospace',
               fontWeight: 700,
-              letterSpacing: '.2rem',
+              letterSpacing: '.1rem',
               color: 'inherit',
               textDecoration: 'none',
             }}
@@ -96,13 +97,29 @@ function Header() {
 
           <Box sx={{display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <Button
-                key={page}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
+              <Link to={page} key={page}>
+                <Button
+                  sx={{
+                    my: 2,
+                    fontWeight: 700,
+                    color: 'white',
+                    display: 'block'
+                  }}
+                >
+                  {page}
+                </Button>
+              </Link>
             ))}
+          </Box>
+          <Box>
+            <Tooltip title="Dark mode">
+              <IconButton
+              >
+                {
+                  <ModeNightIcon />
+                }
+              </IconButton>
+            </Tooltip>
           </Box>
           <Box sx={{display: {xs: 'flex', md: 'none'}}}>
             <IconButton
