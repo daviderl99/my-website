@@ -23,43 +23,12 @@ import ModeNightIcon from '@mui/icons-material/ModeNight';
 
 const pages = ['cv', 'blog', 'about'];
 
-// get more help here -> https://codesandbox.io/s/material-ui-drawer-example-forked-16zfsl?file=/index.js:548-553
-
 function Header() {
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+    const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
 
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
-
-  const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Box sx={{bgcolor: 'primary.main'}}>
-        <Link to="/">
-          <Box
-            component="img"
-            sx={{
-              height: 75,
-              width: 75,
-              maxHeight: { xs: 50, md: 100 },
-              maxWidth: { xs: 50, md: 100 },
-            }}
-            alt="Logo"
-            src={Logo}
-          />
-        </Link>
-      </Box>
-      <List>
-        {pages.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item.toUpperCase()} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
+    const toggleDrawer = () => {
+      setIsDrawerOpen(!isDrawerOpen);
+    };
 
   return (
     <AppBar position="sticky">
@@ -126,7 +95,7 @@ function Header() {
           </Box>
           <Box sx={{display: {xs: 'flex', md: 'none'}}}>
             <IconButton
-              onClick={handleDrawerToggle}
+              onClick={toggleDrawer}
             >
               <MenuIcon />
             </IconButton>
@@ -134,22 +103,45 @@ function Header() {
         </Toolbar>
         <Box component="nav">
           <Drawer
-            variant="temporary"
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
-            ModalProps={{
-              keepMounted: true,
-            }}
+            anchor='right'
+            open={isDrawerOpen}
+            onClose={() => setIsDrawerOpen(false)}
             sx={{
               display: { xs: 'block', sm: 'none' },
-              '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '50%' },
+              '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '75%' }
             }}
           >
-            {drawer}
+            <Box sx={{ textAlign: 'center' }}>
+              <Box sx={{bgcolor: 'primary.main'}}>
+                <Link to="/">
+                  <Box
+                    component="img"
+                    sx={{
+                      height: 75,
+                      width: 75,
+                      maxHeight: { xs: 50, md: 100 },
+                      maxWidth: { xs: 50, md: 100 },
+                    }}
+                    alt="Logo"
+                    src={Logo}
+                  />
+                </Link>
+              </Box>
+              <List>
+                {pages.map((item) => (
+                  <ListItem key={item} disablePadding>
+                    <ListItemButton sx={{ textAlign: 'center' }}>
+                      <ListItemText primary={item.toUpperCase()} />
+                    </ListItemButton>
+                  </ListItem>
+                ))}
+              </List>
+            </Box>
           </Drawer>
         </Box>
       </Container>
     </AppBar>
   );
 }
+
 export default Header;
