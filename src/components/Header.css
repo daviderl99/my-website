@@ -1,0 +1,8 @@
+
+.btn__theme {
+  transition: all .5s;
+}
+
+.btn__theme:active {
+  transform: scale(0.8);
+}

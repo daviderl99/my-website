@@ -12,7 +12,6 @@ import {
   ListItem,
   ListItemText,
   ListItemButton,
-  Divider,
   IconButton,
   Drawer,
   Tooltip
@@ -20,15 +19,22 @@ import {
 import { Link } from 'react-router-dom';
 import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined';
 import ModeNightIcon from '@mui/icons-material/ModeNight';
+import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
+import './Header.css';
 
 const pages = ['cv', 'blog', 'about'];
 
 function Header() {
-    const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
+  const [isDarkMode, setIsDarkMode] = React.useState(false);
 
-    const toggleDrawer = () => {
-      setIsDrawerOpen(!isDrawerOpen);
-    };
+  const toggleDrawer = () => {
+    setIsDrawerOpen(!isDrawerOpen);
+  };
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  }
 
   return (
     <AppBar position="sticky">
@@ -67,7 +73,7 @@ function Header() {
             David Erlich
           </Typography>
 
-          <Box sx={{display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{display: { xs: 'none', sm: 'flex' } }}>
             {pages.map((page) => (
               <Link to={page} key={page}>
                 <Button
@@ -85,15 +91,16 @@ function Header() {
           </Box>
           <Box>
             <Tooltip title="Dark mode">
-              <IconButton
-              >
+              <IconButton onClick={toggleTheme} className="btn__theme">
                 {
-                  <ModeNightIcon />
+                  isDarkMode ?
+                    <WbSunnyOutlinedIcon /> :
+                    <ModeNightIcon />
                 }
               </IconButton>
             </Tooltip>
           </Box>
-          <Box sx={{display: {xs: 'flex', md: 'none'}}}>
+          <Box sx={{display: {xs: 'flex', sm: 'none'}}}>
             <IconButton
               onClick={toggleDrawer}
             >
@@ -116,6 +123,7 @@ function Header() {
                 <Link to="/">
                   <Box
                     component="img"
+                    onClick={() => setIsDrawerOpen(false)}
                     sx={{
                       height: 75,
                       width: 75,
@@ -126,12 +134,15 @@ function Header() {
                     src={Logo}
                   />
                 </Link>
+                <Box sx={{justify: "flex-end"}} onClick={() => setIsDrawerOpen(false)}>
+                  <ArrowForwardIosRoundedIcon />
+                </Box>
               </Box>
               <List>
-                {pages.map((item) => (
-                  <ListItem key={item} disablePadding>
+                {pages.map((page) => (
+                  <ListItem key={page} component={Link} to={page} disablePadding>
                     <ListItemButton sx={{ textAlign: 'center' }}>
-                      <ListItemText primary={item.toUpperCase()} />
+                      <ListItemText primary={page.toUpperCase()} onClick={() => setIsDrawerOpen(false)} />
                     </ListItemButton>
                   </ListItem>
                 ))}
