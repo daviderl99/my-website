@@ -115,7 +115,7 @@ function Header() {
             onClose={() => setIsDrawerOpen(false)}
             sx={{
               display: { xs: 'block', sm: 'none' },
-              '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '75%' }
+              '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '50%' }
             }}
           >
             <Box sx={{ textAlign: 'center' }}>
@@ -134,9 +134,6 @@ function Header() {
                     src={Logo}
                   />
                 </Link>
-                <Box sx={{justify: "flex-end"}} onClick={() => setIsDrawerOpen(false)}>
-                  <ArrowForwardIosRoundedIcon />
-                </Box>
               </Box>
               <List>
                 {pages.map((page) => (
