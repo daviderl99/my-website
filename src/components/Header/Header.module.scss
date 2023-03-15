@@ -1,0 +1,29 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 15px;
+
+  background: linear-gradient(
+    0deg,
+    rgba(28, 28, 28, 0) 0%,
+    rgb(28, 28, 28) 140%
+  );
+}
+
+.nav {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  padding: 10px;
+
+  a {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+}
