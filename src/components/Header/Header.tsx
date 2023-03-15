@@ -6,9 +6,21 @@ export const Header = () => {
   return (
     <div className={styles.header}>
       <nav className={styles.nav}>
-        <Link href="/home">Home</Link>
-        <Link href="/about">About</Link>
-        <Link href="/cv">CV</Link>
+        <Link href="/home">
+          <span className={styles.linkText}>
+            Home
+          </span>
+        </Link>
+        <Link href="/about">
+          <span className={styles.linkText}>
+            About
+          </span>
+        </Link>
+        <Link href="/cv">
+          <span className={styles.linkText}>
+            CV
+          </span>
+        </Link>
       </nav>
     </div>
   )
