@@ -6,7 +6,7 @@ export const Header = () => {
   return (
     <div className={styles.header}>
       <nav className={styles.nav}>
-        <Link href="/home">
+        <Link href="/">
           <span className={styles.linkText}>
             Home
           </span>
