@@ -1,0 +1,26 @@
+.container {
+  border-radius: 15px;
+  color: #fff;
+  padding: 50px;
+  backdrop-filter: blur(8px);
+  min-width: 500px;
+
+  .image {
+    border-radius: 50%;
+  }
+
+  h2 {
+    padding-bottom: 5px;
+    border-bottom: 5px solid #fff;
+    margin: 20px auto;
+  }
+
+  .description {
+    white-space: pre-line;
+  }
+}
+
+.dot:before {
+  content: "•";
+  padding: 0 10px;
+}
