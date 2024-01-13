@@ -11,12 +11,15 @@ const Home = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
-      <main className={styles.main}>
-        {/* <div className={styles.typewriter}>
+      <div style={{display: "flex", alignItems: "center", justifyContent: "center", height: "100vh"}}>
+        <h1 style={{textAlign: "center", fontSize: "10vh"}}>{`<Under construction />`}</h1>
+      </div>
+      {/* <Header /> */}
+      {/* <main className={styles.main}>
+        <div className={styles.typewriter}>
           <h1>David Frederik Erlich</h1>
-        </div> */}
-      </main>
+        </div>
+      </main> */}
     </>
   )
 }
