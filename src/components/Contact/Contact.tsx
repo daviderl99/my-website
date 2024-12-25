@@ -7,8 +7,8 @@ export default function Contact() {
         <div className={styles.contactContent}>
           <h2>Get in Touch</h2>
           <p>
-            I'm currently open to new opportunities and collaborations. 
-            Feel free to reach out if you'd like to work together or just say hello!
+            I&apos;m currently open to new opportunities and collaborations. 
+            Feel free to reach out if you&apos;d like to work together or just say hello!
           </p>
           <div className={styles.contactLinks}>
             <a href="mailto:your.email@example.com">
