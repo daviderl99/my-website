@@ -7,8 +7,8 @@
   "outputDirectory": ".next",
   "rewrites": [
     {
-      "source": "/AnotherToDoList",
-      "destination": "https://another-to-do-list-two.vercel.app"
+      "source": "/AnotherToDoList/:path*",
+      "destination": "https://another-to-do-list-two.vercel.app/:path*"
     }
   ]
 }
