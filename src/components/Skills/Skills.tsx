@@ -1,4 +1,6 @@
 import styles from './Skills.module.scss'
+import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaGitAlt, FaGithub, FaDocker } from 'react-icons/fa';
+import { SiTypescript, SiTailwindcss, SiExpress, SiMongodb, SiWebpack } from 'react-icons/si';
 
 export default function Skills() {
   return (
@@ -9,28 +11,28 @@ export default function Skills() {
           <div className={styles.skillCategory}>
             <h3>Frontend</h3>
             <ul>
-              <li>React / Next.js</li>
-              <li>TypeScript</li>
-              <li>HTML5 / CSS3</li>
-              <li>SCSS / Tailwind</li>
+              <li><FaReact /> React / Next.js</li>
+              <li><SiTypescript /> TypeScript</li>
+              <li><FaHtml5 /> HTML5 / <FaCss3Alt /> CSS3</li>
+              <li><SiTailwindcss /> SCSS / Tailwind</li>
             </ul>
           </div>
           <div className={styles.skillCategory}>
             <h3>Backend</h3>
             <ul>
-              <li>Node.js</li>
-              <li>Express</li>
+              <li><FaNodeJs /> Node.js</li>
+              <li><SiExpress /> Express</li>
               <li>RESTful APIs</li>
-              <li>SQL / NoSQL</li>
+              <li><SiMongodb /> SQL / NoSQL</li>
             </ul>
           </div>
           <div className={styles.skillCategory}>
             <h3>Tools</h3>
             <ul>
-              <li>Git / GitHub</li>
+              <li><FaGitAlt /> Git / <FaGithub /> GitHub</li>
               <li>VS Code</li>
-              <li>Webpack</li>
-              <li>Docker</li>
+              <li><SiWebpack /> Webpack</li>
+              <li><FaDocker /> Docker</li>
             </ul>
           </div>
         </div>
