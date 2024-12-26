@@ -11,15 +11,15 @@ export default function Contact() {
             Feel free to reach out if you&apos;d like to work together or just say hello!
           </p>
           <div className={styles.contactLinks}>
-            <a href="mailto:your.email@example.com">
+            <a href="mailto:daviderlich75@gmail.com">
               <i className="fas fa-envelope"></i>
               Email
             </a>
-            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/daviderl99" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-github"></i>
               GitHub
             </a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/david-frederik-erlich" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-linkedin"></i>
               LinkedIn
             </a>
