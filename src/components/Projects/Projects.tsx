@@ -4,20 +4,20 @@ import Image from 'next/image'
 export default function Projects() {
   const projects = [
     {
-      title: "Personal Portfolio",
-      description: "A modern, responsive portfolio website built with Next.js and TypeScript. Features smooth animations and dark mode support.",
-      image: "/images/portfolio.png",
-      tags: ["Next.js", "TypeScript", "SCSS"],
-      demo: "https://your-portfolio-url.com",
-      github: "https://github.com/yourusername/portfolio"
+      title: "File Storage Drive",
+      description: "A Google Drive-inspired cloud storage solution built with React and Firebase. Features include folder creation, file uploads, nested navigation, and secure user authentication. Users can store and organize various file types including images, videos, and documents in a familiar interface.",
+      image: "/storage-drive.png",
+      tags: ["React", "Firebase", "SCSS"],
+      demo: "https://daviderl99.github.io/Storage-Drive/#/login",
+      github: "https://github.com/daviderl99/Storage-Drive"
     },
     {
-      title: "Project Management App",
-      description: "A full-stack project management application with real-time updates, task tracking, and team collaboration features.",
-      image: "/images/project-management.png",
-      tags: ["React", "Node.js", "MongoDB"],
-      demo: "https://project-management-demo.com",
-      github: "https://github.com/yourusername/project-management"
+      title: "Another ToDo List",
+      description: "A modern task management app built with SvelteKit, TypeScript, and TailwindCSS. Features drag-and-drop functionality, real-time updates, and a minimalist design. Demonstrates clean code architecture and modern front-end development practices.",
+      image: "/todo.png",
+      tags: ["Svelte", "TypeScript", "Tailwind CSS"],
+      demo: "https://another-to-do-list-two.vercel.app",
+      github: "https://github.com/daviderl99/AnotherToDoList"
     }
   ];
 
@@ -33,9 +33,9 @@ export default function Projects() {
                   src={project.image}
                   alt={`${project.title} screenshot`}
                   className={styles.projectImage}
-                  width={600}
-                  height={400}
-                  priority={index === 0}
+                  width={1800}
+                  height={1200}
+                  quality={100}
                 />
               </div>
               <div className={styles.projectContent}>
