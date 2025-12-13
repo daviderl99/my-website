@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect } from "react";
-import Navigation from "@/components/Navigation/Navigation";
-import Hero from "@/components/Hero/Hero";
-import About from "@/components/About/About";
-import Skills from "@/components/Skills/Skills";
-import Projects from "@/components/Projects/Projects";
-import Contact from "@/components/Contact/Contact";
-import Footer from "@/components/Footer/Footer";
+// import Navigation from "@/components/Navigation/Navigation";
+// import Hero from "@/components/Hero/Hero";
+// import About from "@/components/About/About";
+// import Skills from "@/components/Skills/Skills";
+// import Projects from "@/components/Projects/Projects";
+// import Contact from "@/components/Contact/Contact";
+// import Footer from "@/components/Footer/Footer";
+import WorkInProgress from "@/components/WorkInProgress/WorkInProgress";
 
 export default function Home() {
   useEffect(() => {
@@ -26,13 +27,14 @@ export default function Home() {
 
   return (
     <main>
-      <Navigation />
+      {/* <Navigation />
       <Hero />
       <About />
-      <Skills />
-      <Projects />
+      <Skills /> */}
+      <WorkInProgress />
+      {/* <Projects />
       <Contact />
-      <Footer />
+      <Footer /> */}
     </main>
   );
 }
