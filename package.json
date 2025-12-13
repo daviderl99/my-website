@@ -9,10 +9,10 @@
     "lint": "next lint"
   },
   "engines": {
-    "node": "22.x"
+    "node": "24.x"
   },
   "dependencies": {
-    "next": "15.0.4",
+    "next": "^16.0.10",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0",
