@@ -19,7 +19,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
@@ -44,7 +44,7 @@ section h2 {
 }
 
 section h2::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -10px;
   left: 0;
@@ -164,6 +164,6 @@ footer {
   }
 }
 
-.hero>* {
+.hero > * {
   animation: fadeIn 0.8s ease-out forwards;
 }
