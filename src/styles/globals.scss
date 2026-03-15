@@ -25,6 +25,16 @@ body {
   line-height: 1.6;
 }
 
+.pageRoot {
+  position: relative;
+  min-height: 100vh;
+}
+
+.contentLayer {
+  position: relative;
+  z-index: 1;
+}
+
 .container {
   max-width: var(--container-width);
   margin: 0 auto;
