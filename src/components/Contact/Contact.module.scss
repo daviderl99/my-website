@@ -1,54 +1,60 @@
 .contact {
-    padding: 4rem 0;
+  padding: 4rem 0;
 }
 
 .contactContent {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
 
-    h2 {
-        margin-bottom: 1rem;
-        color: var(--accent);
-    }
+  h2 {
+    color: var(--accent);
+  }
 
-    p {
-        margin-bottom: 2rem;
-        color: var(--text-secondary);
-    }
+  p {
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+  }
 }
 
 .contactLinks {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+
+  a {
     display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
 
-    a {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.75rem 1.5rem;
-        background-color: var(--bg-secondary);
-        border-radius: 8px;
-        color: var(--text-primary);
-        text-decoration: none;
-        font-weight: 500;
-        transition: all 0.3s ease;
-
-        i {
-            font-size: 1.25rem;
-            color: var(--accent);
-        }
-
-        &:hover {
-            transform: translateY(-2px);
-            background-color: var(--accent);
-            color: var(--bg-primary);
-
-            i {
-                color: var(--bg-primary);
-            }
-        }
+    i {
+      font-size: 1.25rem;
+      color: var(--accent);
+      transition: color 0.25s ease;
     }
+
+    &:hover,
+    &:focus {
+      transform: translateY(-4px);
+      background-color: var(--accent);
+      color: var(--bg-primary);
+      outline: none;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+
+      i {
+        color: var(--bg-primary);
+      }
+    }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
+    }
+  }
 }

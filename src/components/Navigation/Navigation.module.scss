@@ -1,44 +1,117 @@
-.navigationContainer {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: var(--nav-height);
-  background-color: rgba(10, 10, 10, 0.8);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.navContent {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-  max-width: var(--container-width);
+.sectionNav {
+  padding: 1.25rem 1.5rem 0.75rem;
+  max-width: 56rem;
   margin: 0 auto;
-  padding: 0 20px;
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--accent);
-}
-
-.navLinks {
-  display: flex;
+.sectionNavList {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.85rem;
   list-style: none;
-  gap: 2rem;
+}
 
-  & a {
-    color: var(--text-primary);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
+.sectionNavItem {
+  min-width: 0;
+}
 
-    &:hover {
-      color: var(--accent);
-    }
+.sectionNavButton {
+  position: relative;
+  border: 1px solid rgba(100, 255, 218, 0.16);
+  color: var(--text-primary);
+  aspect-ratio: 1 / 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 10px;
+  min-width: 3.8rem;
+  backdrop-filter: blur(1px);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    border-color: rgba(100, 255, 218, 0.42);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+  }
+}
+
+.sectionNavButtonActive {
+  color: var(--text-primary);
+  border-color: rgba(100, 255, 218, 0.55);
+  background: rgba(100, 255, 218, 0.2);
+}
+
+.sectionNavButtonInactive {
+  &:hover:not(:disabled) {
+    color: var(--accent);
+  }
+}
+
+.sectionNavIcon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.sectionNavTooltip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  transform: translateX(-50%) translateY(4px);
+  opacity: 0;
+  pointer-events: none;
+  border: 1px solid rgba(100, 255, 218, 0.28);
+  background: rgba(10, 10, 10, 0.84);
+  color: var(--text-primary);
+  font-family: "Fira Code", "Courier New", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  padding: 0.3rem 0.45rem;
+  border-radius: 8px;
+  backdrop-filter: blur(12px);
+  white-space: nowrap;
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+}
+
+.sectionNavButton:hover .sectionNavTooltip,
+.sectionNavButton:focus-visible .sectionNavTooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 768px) {
+  .sectionNav {
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .sectionNavList {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .sectionNavButton {
+    min-width: 3.5rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .sectionNavList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sectionNavButton {
+    min-width: 3.25rem;
   }
 }
