@@ -3,12 +3,12 @@ const About = () => {
     <section id="about" className="section-padding px-6">
       <div className="max-w-3xl mx-auto">
         <div data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
-          <h2 className="flex items-center gap-3 text-2xl font-bold text-foreground mb-8">
-            <span className="font-mono text-primary text-lg">01.</span>
+          <h2 className="flex items-center gap-3 text-2xl font-bold text-primary mb-8">
+            <span className="font-mono text-accent text-lg">01.</span>
             About Me
-            <span className="h-px flex-1 bg-border max-w-xs" />
+            <span className="h-px flex-1 bg-secondary/30 max-w-xs" />
           </h2>
-          <div className="space-y-4 text-muted-foreground leading-relaxed">
+          <div className="space-y-4 text-secondary leading-relaxed">
             <p>
               Hello! I&#39;m John, a software developer who enjoys creating
               things that live on the internet. My interest in web development

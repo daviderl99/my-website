@@ -17,8 +17,8 @@
 
 .sectionNavButton {
   position: relative;
-  border: 1px solid rgba(100, 255, 218, 0.16);
-  color: var(--text-primary);
+  border: 1px solid var(--border);
+  color: var(--primary);
   aspect-ratio: 1 / 1;
   display: inline-flex;
   align-items: center;
@@ -36,8 +36,9 @@
 
   &:hover:not(:disabled) {
     transform: translateY(-2px);
-    border-color: rgba(100, 255, 218, 0.42);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+    border-color: color-mix(in srgb, var(--accent) 42%, transparent);
+    box-shadow: 0 10px 24px
+      color-mix(in srgb, var(--background) 28%, transparent);
   }
 
   &:disabled {
@@ -46,9 +47,9 @@
 }
 
 .sectionNavButtonActive {
-  color: var(--text-primary);
-  border-color: rgba(100, 255, 218, 0.55);
-  background: rgba(100, 255, 218, 0.2);
+  color: var(--primary);
+  border-color: var(--border);
+  background: color-mix(in srgb, var(--accent) 20%, transparent);
 }
 
 .sectionNavButtonInactive {
@@ -69,9 +70,9 @@
   transform: translateX(-50%) translateY(4px);
   opacity: 0;
   pointer-events: none;
-  border: 1px solid rgba(100, 255, 218, 0.28);
-  background: rgba(10, 10, 10, 0.84);
-  color: var(--text-primary);
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+  background: color-mix(in srgb, var(--background) 84%, transparent);
+  color: var(--primary);
   font-family: "Fira Code", "Courier New", monospace;
   font-size: 0.7rem;
   letter-spacing: 0.05em;

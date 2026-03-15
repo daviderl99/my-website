@@ -27,10 +27,10 @@ export default function Projects() {
     <section id="projects" className="section-padding px-6">
       <div className="max-w-3xl mx-auto">
         <div data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
-          <h2 className="flex items-center gap-3 text-2xl font-bold text-foreground mb-10">
-            <span className="font-mono text-primary text-lg">02.</span>
+          <h2 className="flex items-center gap-3 text-2xl font-bold text-primary mb-10">
+            <span className="font-mono text-accent text-lg">02.</span>
             Projects
-            <span className="h-px flex-1 bg-border max-w-xs" />
+            <span className="h-px flex-1 bg-secondary/30 max-w-xs" />
           </h2>
         </div>
 
@@ -42,18 +42,18 @@ export default function Projects() {
               data-aos-duration="400"
               data-aos-delay={i * 100}
               data-aos-once="true"
-              className="bg-card rounded-lg p-6 border border-border hover:border-primary/30 transition-colors group"
+              className="group rounded-lg border border-border bg-background/60 p-6 backdrop-blur-[1px] transition-colors"
             >
               <div className="flex items-start justify-between mb-3">
-                <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                <h3 className="text-lg font-semibold text-primary group-hover:text-accent transition-colors">
                   {project.title}
                 </h3>
-                <div className="flex items-center gap-3 text-muted-foreground">
+                <div className="flex items-center gap-3 text-primary/80">
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-primary transition-colors"
+                    className="hover:text-accent transition-colors"
                     aria-label="GitHub"
                   >
                     <FaGithub />
@@ -62,21 +62,21 @@ export default function Projects() {
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-primary transition-colors"
+                    className="hover:text-accent transition-colors"
                     aria-label="Live demo"
                   >
                     <FaArrowUpRightFromSquare />
                   </a>
                 </div>
               </div>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+              <p className="text-primary/90 text-sm leading-relaxed mb-4">
                 {project.description}
               </p>
               <ul className="flex flex-wrap gap-2">
                 {project.tags.map((t) => (
                   <li
                     key={t}
-                    className="font-mono text-xs text-primary/80 bg-primary/5 px-2.5 py-1 rounded"
+                    className="rounded bg-accent/10 px-2.5 py-1 font-mono text-xs text-accent"
                   >
                     {t}
                   </li>

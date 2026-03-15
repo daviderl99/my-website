@@ -18,10 +18,10 @@ const Skills = () => {
     <section id="skills" className="section-padding px-6">
       <div className="max-w-3xl mx-auto">
         <div data-aos="fade-up" data-aos-duration="500" data-aos-once="true">
-          <h2 className="flex items-center gap-3 text-2xl font-bold text-foreground mb-10">
-            <span className="font-mono text-primary text-lg">03.</span>
+          <h2 className="flex items-center gap-3 text-2xl font-bold text-primary mb-10">
+            <span className="font-mono text-accent text-lg">03.</span>
             Skills
-            <span className="h-px flex-1 bg-border max-w-xs" />
+            <span className="h-px flex-1 bg-secondary/30 max-w-xs" />
           </h2>
         </div>
 
@@ -33,18 +33,18 @@ const Skills = () => {
               data-aos-duration="400"
               data-aos-delay={i * 100}
               data-aos-once="true"
-              className="bg-card rounded-lg p-6 border border-border"
+              className="rounded-lg border border-[var(--border)] bg-background/60 p-6 backdrop-blur-[1px]"
             >
-              <h3 className="font-mono text-primary text-sm font-medium mb-4">
+              <h3 className="mb-4 font-mono text-sm font-medium text-accent">
                 {skill.title}
               </h3>
               <ul className="space-y-2">
                 {skill.skills.map((skill) => (
                   <li
                     key={skill}
-                    className="text-muted-foreground text-sm flex items-center gap-2"
+                    className="flex items-center gap-2 text-sm text-secondary"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent" />
                     {skill}
                   </li>
                 ))}

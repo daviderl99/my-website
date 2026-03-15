@@ -1,37 +1,41 @@
 /* Skills Section */
 .skillsGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
 }
 
 .skillCategory {
-    background-color: var(--bg-secondary);
-    padding: 2rem;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
+  background-color: color-mix(
+    in srgb,
+    var(--background) 82%,
+    var(--primary) 18%
+  );
+  padding: 2rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
 
-    &:hover {
-        transform: translateY(-5px);
-    }
+  &:hover {
+    transform: translateY(-5px);
+  }
 
-    h3 {
-        color: var(--accent);
-        margin-bottom: 1rem;
-    }
+  h3 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
 
-    ul {
-        list-style: none;
-    }
+  ul {
+    list-style: none;
+  }
 
-    li {
-        margin: 0.5rem 0;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
+  li {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
 
-    i {
-        color: var(--accent);
-    }
+  i {
+    color: var(--accent);
+  }
 }

@@ -5,21 +5,21 @@ const Hero = () => {
         <h1
           data-aos="fade-up"
           data-aos-delay="200"
-          className="text-4xl md:text-6xl font-bold text-primary mb-3"
+          className="text-4xl md:text-6xl font-bold text-accent mb-3"
         >
           David Frederik Erlich
         </h1>
         <h2
           data-aos="fade-up"
           data-aos-delay="300"
-          className="text-3xl md:text-5xl font-bold text-foreground mb-6"
+          className="text-3xl md:text-5xl font-bold text-primary mb-6"
         >
           Web Developer
         </h2>
         <p
           data-aos="fade-up"
           data-aos-delay="400"
-          className="text-muted-foreground max-w-lg text-base md:text-lg leading-relaxed mb-10"
+          className="text-secondary max-w-lg text-base md:text-lg leading-relaxed mb-10"
         >
           I&#39;m a web developer with 5 years of experience. Currently focused
           on building accessible...
