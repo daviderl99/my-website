@@ -10,17 +10,19 @@ const About = () => {
           </h2>
           <div className="space-y-4 text-secondary leading-relaxed">
             <p>
-              Hello! I&#39;m John, a software developer who enjoys creating
-              things that live on the internet. My interest in web development
-              started back in 2015 when I decided to try building custom themes
-              — turns out hacking together HTML & CSS taught me a lot about how
-              the web works.
+              I&#39;m a frontend developer based in Tallinn who enjoys building
+              clean, intuitive, and accessible web experiences. I focus on
+              creating interfaces that are not only visually polished but also
+              intuitive and easy to use for everyone. Accessibility has become
+              an important part of how I approach development, and I like
+              turning complex requirements into practical, user-friendly
+              solutions.
             </p>
             <p>
-              Fast-forward to today, and I&#39;ve had the privilege of working
-              at a startup, a large corporation, and a design agency. My main
-              focus these days is building accessible, inclusive products and
-              digital experiences.
+              I enjoy working at the intersection of design and development,
+              translating ideas and mockups into responsive, well-structured
+              interfaces. Outside of work, I like exploring new technologies and
+              building small personal projects to experiment with new concepts.
             </p>
           </div>
         </div>

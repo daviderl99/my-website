@@ -1,4 +1,5 @@
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import styles from "./Contact.module.scss";
 
 export default function Contact() {
   return (
@@ -10,7 +11,7 @@ export default function Contact() {
             Get in Touch
             <span className="h-px flex-1 bg-secondary/30 max-w-xs" />
           </h2>
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          <div className={styles.iconGrid}>
             <div
               data-aos="zoom-in-right"
               data-aos-delay="100"
@@ -18,23 +19,21 @@ export default function Contact() {
             >
               <a
                 href="mailto:daviderlich75@gmail.com"
-                className="inline-flex w-60 items-center justify-center gap-2 border border-accent text-accent px-7 py-3 rounded font-mono text-sm transition-colors duration-700 ease-out hover:bg-accent hover:text-background"
+                className={styles.iconButton}
                 aria-label="Email"
               >
-                <FaEnvelope size={16} aria-hidden="true" />
-                Email
+                <FaEnvelope size={36} aria-hidden="true" />
               </a>
             </div>
             <div data-aos="zoom-in" data-aos-delay="150" data-aos-once="true">
               <a
                 href="https://github.com/daviderl99"
-                className="inline-flex w-60 items-center justify-center gap-2 border border-accent text-accent px-7 py-3 rounded font-mono text-sm transition-colors duration-700 ease-out hover:bg-accent hover:text-background"
+                className={styles.iconButton}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
               >
-                <FaGithub size={16} aria-hidden="true" />
-                GitHub
+                <FaGithub size={36} aria-hidden="true" />
               </a>
             </div>
             <div
@@ -44,13 +43,12 @@ export default function Contact() {
             >
               <a
                 href="https://www.linkedin.com/in/david-frederik-erlich"
-                className="inline-flex w-60 items-center justify-center gap-2 border border-accent text-accent px-7 py-3 rounded font-mono text-sm transition-colors duration-700 ease-out hover:bg-accent hover:text-background"
+                className={styles.iconButton}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
               >
-                <FaLinkedin size={16} aria-hidden="true" />
-                LinkedIn
+                <FaLinkedin size={36} aria-hidden="true" />
               </a>
             </div>
           </div>

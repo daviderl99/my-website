@@ -21,8 +21,8 @@ const Hero = () => {
           data-aos-delay="400"
           className="text-secondary max-w-lg text-base md:text-lg leading-relaxed mb-10"
         >
-          I&#39;m a web developer with 5 years of experience. Currently focused
-          on building accessible...
+          Building accessible, user-friendly websites that are fast, modern, and
+          intuitive.
         </p>
       </div>
     </section>
