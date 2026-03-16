@@ -3,7 +3,7 @@ import styles from "./Skills.module.scss";
 const skillCategories = [
   {
     title: "Frontend",
-    skills: [
+    items: [
       "React",
       "Angular",
       "TypeScript",
@@ -14,7 +14,7 @@ const skillCategories = [
   },
   {
     title: "Backend",
-    skills: [
+    items: [
       "Node.js",
       "Express.js",
       "Java",
@@ -25,7 +25,7 @@ const skillCategories = [
   },
   {
     title: "Tools",
-    skills: ["Git", "Docker", "Firebase", "Vercel", "Figma", "Wordpress"],
+    items: ["Git", "Docker", "Firebase", "Vercel", "Figma", "Wordpress"],
   },
 ];
 
@@ -48,26 +48,26 @@ const Skills = () => {
 
         <div className={styles.cardsList}>
           <div className="grid md:grid-cols-3 gap-7 pb-2">
-            {skillCategories.map((skill, i) => (
+            {skillCategories.map((category, index) => (
               <div
-                key={skill.title}
+                key={category.title}
                 data-aos="fade-up"
                 data-aos-duration="400"
-                data-aos-delay={i * 100}
+                data-aos-delay={index * 100}
                 data-aos-once="true"
                 className="h-full rounded-xl border border-[var(--border)] bg-background/60 p-7 md:p-8 backdrop-blur-[2px]"
               >
                 <h3 className="mb-5 font-mono text-xl text-accent">
-                  {skill.title}
+                  {category.title}
                 </h3>
                 <ul className="space-y-3">
-                  {skill.skills.map((skillName) => (
+                  {category.items.map((item) => (
                     <li
-                      key={skillName}
+                      key={item}
                       className="flex items-center gap-2.5 text-base text-secondary"
                     >
                       <span className="w-2 h-2 rounded-full bg-accent" />
-                      {skillName}
+                      {item}
                     </li>
                   ))}
                 </ul>
