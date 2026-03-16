@@ -5,8 +5,8 @@ import "@/styles/globals.scss";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "David Frederik Erlich | Frontend Developer",
-  description: "Personal website of David Frederik Erlich, Frontend Developer",
+  title: "David Frederik Erlich | Web Developer",
+  description: "Personal website of David Frederik Erlich, Web Developer",
 };
 
 export default function RootLayout({

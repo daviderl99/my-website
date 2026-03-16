@@ -1,42 +1,83 @@
-import styles from './Skills.module.scss'
-import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaGitAlt, FaGithub, FaDocker } from 'react-icons/fa';
-import { SiTypescript, SiTailwindcss, SiExpress, SiMongodb, SiWebpack } from 'react-icons/si';
+import styles from "./Skills.module.scss";
 
-export default function Skills() {
+const skillCategories = [
+  {
+    title: "Frontend",
+    skills: [
+      "React",
+      "Angular",
+      "TypeScript",
+      "Next.js",
+      "Svelte",
+      "Tailwind / SCSS",
+    ],
+  },
+  {
+    title: "Backend",
+    skills: [
+      "Node.js",
+      "Express.js",
+      "Java",
+      "Spring Boot",
+      "Python",
+      "REST API",
+    ],
+  },
+  {
+    title: "Tools",
+    skills: ["Git", "Docker", "Firebase", "Vercel", "Figma", "Wordpress"],
+  },
+];
+
+const Skills = () => {
   return (
-    <section id="skills" className={styles.skills}>
-      <div className="container">
-        <h2>Skills</h2>
-        <div className={styles.skillsGrid}>
-          <div className={styles.skillCategory}>
-            <h3>Frontend</h3>
-            <ul>
-              <li><FaReact /> React / Next.js</li>
-              <li><SiTypescript /> TypeScript</li>
-              <li><FaHtml5 /> HTML5 / <FaCss3Alt /> CSS3</li>
-              <li><SiTailwindcss /> SCSS / Tailwind</li>
-            </ul>
-          </div>
-          <div className={styles.skillCategory}>
-            <h3>Backend</h3>
-            <ul>
-              <li><FaNodeJs /> Node.js</li>
-              <li><SiExpress /> Express</li>
-              <li>RESTful APIs</li>
-              <li><SiMongodb /> SQL / NoSQL</li>
-            </ul>
-          </div>
-          <div className={styles.skillCategory}>
-            <h3>Tools</h3>
-            <ul>
-              <li><FaGitAlt /> Git / <FaGithub /> GitHub</li>
-              <li>VS Code</li>
-              <li><SiWebpack /> Webpack</li>
-              <li><FaDocker /> Docker</li>
-            </ul>
+    <section id="skills" className={`${styles.section} px-6`}>
+      <div className={styles.inner}>
+        <div
+          data-aos="fade-up"
+          data-aos-duration="500"
+          data-aos-once="true"
+          className={styles.header}
+        >
+          <h2 className="flex items-center gap-3 text-2xl font-bold text-primary mb-10">
+            <span className="font-mono text-accent text-lg">03.</span>
+            Skills
+            <span className="h-px flex-1 bg-secondary/30 max-w-xs" />
+          </h2>
+        </div>
+
+        <div className={styles.cardsList}>
+          <div className="grid md:grid-cols-3 gap-7 pb-2">
+            {skillCategories.map((skill, i) => (
+              <div
+                key={skill.title}
+                data-aos="fade-up"
+                data-aos-duration="400"
+                data-aos-delay={i * 100}
+                data-aos-once="true"
+                className="h-full rounded-xl border border-[var(--border)] bg-background/60 p-7 md:p-8 backdrop-blur-[2px]"
+              >
+                <h3 className="mb-5 font-mono text-xl text-accent">
+                  {skill.title}
+                </h3>
+                <ul className="space-y-3">
+                  {skill.skills.map((skillName) => (
+                    <li
+                      key={skillName}
+                      className="flex items-center gap-2.5 text-base text-secondary"
+                    >
+                      <span className="w-2 h-2 rounded-full bg-accent" />
+                      {skillName}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
+
+export default Skills;
