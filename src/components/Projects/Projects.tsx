@@ -42,7 +42,7 @@ export default function Projects() {
               data-aos-duration="400"
               data-aos-delay={i * 100}
               data-aos-once="true"
-              className="group rounded-lg border border-border bg-background/60 p-6 backdrop-blur-[1px] transition-colors"
+              className="group rounded-lg border border-border bg-background/60 p-6 backdrop-blur-[2px] transition-colors"
             >
               <div className="flex items-start justify-between mb-3">
                 <h3 className="text-lg font-semibold text-primary group-hover:text-accent transition-colors">

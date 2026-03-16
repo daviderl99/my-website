@@ -33,7 +33,7 @@ const Skills = () => {
               data-aos-duration="400"
               data-aos-delay={i * 100}
               data-aos-once="true"
-              className="rounded-lg border border-[var(--border)] bg-background/60 p-6 backdrop-blur-[1px]"
+              className="rounded-lg border border-[var(--border)] bg-background/60 p-6 backdrop-blur-[2px]"
             >
               <h3 className="mb-4 font-mono text-sm font-medium text-accent">
                 {skill.title}

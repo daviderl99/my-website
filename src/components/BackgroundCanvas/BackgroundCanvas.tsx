@@ -47,7 +47,7 @@ export default function BackgroundCanvas() {
       rows = Math.ceil(height / CELL_HEIGHT);
       phaseOffsets = new Float32Array(columns * rows);
 
-      // Give each character spot its own random starting point so the motion does not look too uniform.
+      // Start off each character at a random point in the wave cycle
       for (let i = 0; i < phaseOffsets.length; i += 1) {
         phaseOffsets[i] = Math.random() * Math.PI * 2;
       }
@@ -58,7 +58,7 @@ export default function BackgroundCanvas() {
       context.textAlign = "center";
       context.textBaseline = "middle";
 
-      // Time keeps increasing, which makes the wave move.
+      // Time keeps increasing, which moves the wave
       const t = time * WAVE_SPEED;
       const maxCharIndex = CHAR_SET.length - 1;
 
@@ -68,14 +68,14 @@ export default function BackgroundCanvas() {
           const y = row * CELL_HEIGHT + CELL_HEIGHT / 2;
           const index = row * columns + col;
 
-          // Mix a few soft wave patterns together for a smooth, natural-looking movement.
+          // Mix a few soft wave patterns together for a smooth, natural-looking movement
           const phase = phaseOffsets[index];
           const waveX = Math.sin(col * 0.36 + t + phase * 0.7);
           const waveY = Math.cos(row * 0.31 - t * 0.9 + phase * 0.4);
           const crossWave = Math.sin((col + row) * 0.18 + t * 0.65 + phase);
           const wave = (waveX + waveY + crossWave) / 3;
 
-          // Turn the wave value into a 0-1 value, then use it to pick one character from CHAR_SET.
+          // Normalize the value to a 0-1 range, then use it to pick one character from CHAR_SET
           const normalized = (wave + 1) * 0.5;
           const charIndex = Math.max(
             0,
@@ -83,8 +83,8 @@ export default function BackgroundCanvas() {
           );
           const char = CHAR_SET[charIndex];
 
-          // This controls how much the mouse affects this character.
-          // 1 = very close to the mouse, 0 = outside the mouse effect area.
+          // Controls how much the mouse affects this character
+          // 1 = very close to the mouse, 0 = outside the mouse effect area
           let hoverStrength = 0;
           if (mouse.active) {
             const dx = x - mouse.x;
@@ -92,14 +92,14 @@ export default function BackgroundCanvas() {
             const distanceSq = dx * dx + dy * dy;
 
             if (distanceSq < HOVER_RADIUS_SQ) {
-              // Closer to the mouse = stronger effect.
+              // Closer to the mouse = stronger effect
               const distance = Math.sqrt(distanceSq);
               hoverStrength = 1 - distance / HOVER_RADIUS;
             }
           }
 
           const size = BASE_FONT_SIZE + hoverStrength * 5;
-          const alpha = 0.17 + hoverStrength * 0.78;
+          const alpha = 0.17 + hoverStrength * 0.5;
 
           context.font = `${size}px "Fira Code", "Courier New", monospace`;
           context.fillStyle = `rgba(160, 255, 232, ${alpha.toFixed(3)})`;
