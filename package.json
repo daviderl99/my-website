@@ -12,6 +12,7 @@
     "node": ">=24"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "aos": "^2.3.4",
     "next": "^16.0.10",
     "react": "^19.0.0",
