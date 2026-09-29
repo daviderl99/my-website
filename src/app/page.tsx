@@ -24,6 +24,7 @@ const SECTION_ORDER: SectionId[] = [
   "skills",
   "contact",
 ];
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 type TransitionState = {
   phase: "idle" | "animating";
@@ -94,39 +95,56 @@ export default function Home() {
   }, [clearPendingTransition]);
 
   const selectedSection = transition.nextSection ?? activeSection;
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "David Frederik Erlich",
+    jobTitle: "Frontend Web Developer",
+    url: siteUrl,
+    sameAs: [
+      "https://github.com/daviderl99",
+      "https://www.linkedin.com/in/david-frederik-erlich",
+    ],
+  };
 
   return (
-    <main className="pageRoot">
-      <BackgroundCanvas />
-      <div className="contentLayer">
-        <div className="pageViewport" aria-live="polite">
-          <div className="pageStage">
-            <div
-              className={`pagePanel pagePanelCurrent pagePanelCurrent${
-                transition.direction === -1 ? "Reverse" : "Forward"
-              } ${transition.phase === "animating" ? "pagePanelExit" : ""}`}
-            >
-              {sections[activeSection]}
-            </div>
-
-            {transition.nextSection ? (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <main className="pageRoot">
+        <BackgroundCanvas />
+        <div className="contentLayer">
+          <div className="pageViewport" aria-live="polite">
+            <div className="pageStage">
               <div
-                className={`pagePanel pagePanelIncoming pagePanelIncoming${
+                className={`pagePanel pagePanelCurrent pagePanelCurrent${
                   transition.direction === -1 ? "Reverse" : "Forward"
-                } ${transition.phase === "animating" ? "pagePanelEnter" : ""}`}
+                } ${transition.phase === "animating" ? "pagePanelExit" : ""}`}
               >
-                {sections[transition.nextSection]}
+                {sections[activeSection]}
               </div>
-            ) : null}
+
+              {transition.nextSection ? (
+                <div
+                  className={`pagePanel pagePanelIncoming pagePanelIncoming${
+                    transition.direction === -1 ? "Reverse" : "Forward"
+                  } ${transition.phase === "animating" ? "pagePanelEnter" : ""}`}
+                >
+                  {sections[transition.nextSection]}
+                </div>
+              ) : null}
+            </div>
           </div>
+          <Navigation
+            activeSection={selectedSection}
+            isTransitioning={transition.phase !== "idle"}
+            onNavigate={handleNavigate}
+          />
+          <Footer />
         </div>
-        <Navigation
-          activeSection={selectedSection}
-          isTransitioning={transition.phase !== "idle"}
-          onNavigate={handleNavigate}
-        />
-        <Footer />
-      </div>
-    </main>
+      </main>
+    </>
   );
 }

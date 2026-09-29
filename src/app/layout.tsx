@@ -3,10 +3,61 @@ import { Inter } from "next/font/google";
 import "@/styles/globals.scss";
 
 const inter = Inter({ subsets: ["latin"] });
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export const metadata: Metadata = {
-  title: "David Frederik Erlich | Web Developer",
-  description: "Personal website of David Frederik Erlich, Web Developer",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "David Frederik Erlich | Frontend Web Developer",
+    template: "%s | David Frederik Erlich",
+  },
+  description:
+    "Frontend web developer portfolio of David Frederik Erlich. Explore projects, technical skills, and contact information.",
+  keywords: [
+    "David Frederik Erlich",
+    "Frontend Developer",
+    "Web Developer",
+    "Next.js Portfolio",
+    "React Developer",
+    "TypeScript",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  authors: [{ name: "David Frederik Erlich" }],
+  creator: "David Frederik Erlich",
+  publisher: "David Frederik Erlich",
+  category: "technology",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    siteName: "David Frederik Erlich Portfolio",
+    title: "David Frederik Erlich | Frontend Web Developer",
+    description:
+      "Explore the portfolio of David Frederik Erlich, featuring modern frontend projects, skills, and ways to get in touch.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "David Frederik Erlich | Frontend Web Developer",
+    description:
+      "Modern frontend portfolio with projects, technical skills, and contact details.",
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
